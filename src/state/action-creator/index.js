@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const fetchMovies = (query) => {
+export const fetchMovies = (query) => {
     return async (dispatch) => {
         const response = await axios.get(`http://www.omdbapi.com/?s=${query}&apikey=c6ba1cfc`);
         const dataSearch = await response.data.Search;
@@ -12,4 +12,6 @@ const fetchMovies = (query) => {
     };
 };
 
-export default fetchMovies;
+export const updateSearchQuery = (query) => {
+    return (dispatch) => dispatch({type: "UPDATE_SEARCH_QUERY", payload: query})
+}

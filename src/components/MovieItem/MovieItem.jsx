@@ -1,6 +1,8 @@
+import './MovieItem.css'
+
 const MovieItem = (props) => {
     return (
-        <div>
+        <div className='movie-item'>
             <img src={props.movie.Poster} alt="movie"></img>
         </div>
     )

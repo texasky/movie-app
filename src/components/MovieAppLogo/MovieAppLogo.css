@@ -1,0 +1,8 @@
+.movie-app-logo {
+    display: flex;
+    align-items: center;
+}
+
+.movie-app-logo img {
+    margin-right: 30px;
+}

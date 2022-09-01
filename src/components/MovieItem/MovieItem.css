@@ -1,0 +1,8 @@
+.movie-item {
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.movie-item:hover {
+    transform: scale(1.2);
+}
