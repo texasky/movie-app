@@ -4,5 +4,6 @@
 }
 
 .movie-item:hover {
-    transform: scale(1.2);
+    cursor: pointer;
+    transform: scale(1.1);
 }

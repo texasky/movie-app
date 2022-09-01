@@ -1,0 +1,37 @@
+.movie-preview {
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+    justify-content: center;
+    padding-left: 60px;
+}
+
+.movie-preview .back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.movie-preview-card {
+    display: flex;
+    background-color: cornflowerblue;
+    border: 3px solid royalblue;
+    border-radius: 5px;
+}
+
+.movie-preview-card img {
+    border-radius: 5px 0 0 5px;
+}
+
+.movie-preview-card span {
+    margin: 10px 0;
+}
+
+.movie-preview-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+}

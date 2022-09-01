@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSearchQuery } from '../../state/action-creator/index'
+import './MovieSearchBar.css'
 
 const MovieSearchBar = (props) => {
     const dispatch = useDispatch();
@@ -10,7 +11,9 @@ const MovieSearchBar = (props) => {
     }
 
     return (
-        <input type="text" placeholder='Type to search' value={searchQuery} onChange={(event => setSearchQuery(event))}></input>
+        <div className='movie-search-bar'>
+            <input type="text" placeholder='Type to search' value={searchQuery} onChange={(event => setSearchQuery(event))}></input>
+        </div>
     )
 }
 

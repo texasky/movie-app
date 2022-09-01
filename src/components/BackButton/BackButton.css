@@ -1,0 +1,16 @@
+.back-button {
+    cursor: pointer;
+    width: 50px;
+    background-image: url('../../assets/left-arrow.svg');
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background-color: cornflowerblue;
+    opacity: 0.9;
+}

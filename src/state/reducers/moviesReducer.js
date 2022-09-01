@@ -1,6 +1,8 @@
 const defaultState = {
     movies: [],
-    searchQuery: 'Star Wars'
+    searchQuery: 'Star Wars',
+    isMovieOpened: false,
+    openedMovieId: '',
 };
 
 const reducer = (state = defaultState, action) => {
@@ -9,6 +11,10 @@ const reducer = (state = defaultState, action) => {
             return {...state, movies: action.payload}
         case "UPDATE_SEARCH_QUERY": 
             return {...state, searchQuery: action.payload}
+        case "TOGGLE_MOVIE_OPEN": 
+            return {...state, isMovieOpened: !state.isMovieOpened}
+        case "SET_OPEN_MOVIE_ID": 
+            return {...state, openedMovieId: action.payload}
         default: return state;
     }
 }

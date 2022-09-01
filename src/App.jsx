@@ -4,6 +4,7 @@ import MoviesList from './components/MoviesList/MoviesList';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies } from './state/action-creator/index'
 import MovieHeader from './components/MovieHeader/MovieHeader';
+import MoviePreview from './components/MoviePreview/MoviePreview';
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
 
   const movies = useSelector(state => state.moviesStore.movies);
   const searchQuery = useSelector(state => state.moviesStore.searchQuery);
+  const isMovieOpened = useSelector(state => state.moviesStore.isMovieOpened)
 
   useEffect(() => {
     dispatch(fetchMovies(searchQuery));
@@ -19,7 +21,8 @@ const App = () => {
   return (
     <div className="App">
       <MovieHeader/>
-      {movies && <MoviesList movies={movies}/>}
+      {isMovieOpened && <MoviePreview/>}
+      {(movies && !isMovieOpened) && <MoviesList movies={movies}/>}
     </div>
   );
 }
