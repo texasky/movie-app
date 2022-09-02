@@ -1,6 +1,6 @@
 .movie-preview {
     display: flex;
-    margin-top: 50px;
+    margin-top: 130px;
     position: relative;
     justify-content: center;
     padding-left: 60px;
@@ -15,9 +15,11 @@
 
 .movie-preview-card {
     display: flex;
-    background-color: cornflowerblue;
+    background-color: rgba(100,149,237, 0.7);
     border: 3px solid royalblue;
     border-radius: 5px;
+    margin: 0 50px 0 50px;
+    text-align: left;
 }
 
 .movie-preview-card img {
@@ -34,4 +36,15 @@
     justify-content: center;
     align-items: flex-start;
     padding: 15px;
+}
+
+@media screen and (max-width: 700px) {
+    .movie-preview-card {
+        flex-direction: column;
+        margin-left: 40px;
+    }
+
+    .movie-preview .back-button {
+        margin-left: 10px;
+    }
 }

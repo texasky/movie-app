@@ -2,4 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.movies-list-wrapper {
+    max-width: 1400px;
+    margin: 110px auto;
 }

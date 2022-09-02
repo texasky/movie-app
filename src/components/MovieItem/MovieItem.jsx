@@ -12,6 +12,7 @@ const MovieItem = (props) => {
     return (
         <div className='movie-item' onClick={openMovieHandler}>
             <img src={props.movie.Poster} alt="movie"></img>
+            <div className='movie-item-title'>{props.movie.Title}</div>
         </div>
     )
 }

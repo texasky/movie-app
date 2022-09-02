@@ -6,8 +6,10 @@ const MovieHeader = (props) => {
 
     return (
         <div className='movie-header'>
-            <MovieAppLogo/>
-            <MovieSearchBar/>
+            <div className='movie-header-wrapper'>
+                <MovieAppLogo/>
+                <MovieSearchBar/>
+            </div>
         </div>
     )
 }
