@@ -8,7 +8,7 @@ const MoviePreview = (props) => {
     const openedMovieData = moviesData.filter(mov => mov.imdbID === openedMovieId)[0];
 
     return (
-        <div className='movie-preview'>
+        <div className='movie-preview' data-testid="movie-preview">
             <BackButton/>
             <div className='movie-preview-card'>
                 <img src={openedMovieData.Poster} alt={openedMovieData.Title}/>

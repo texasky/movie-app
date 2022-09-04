@@ -22,7 +22,7 @@ const App = () => {
   } else if (!movies && searchQuery.length < 3) {
     emptyComponentText = 'Enter at least 3 letters to search'
   } else if (!movies && searchQuery) {
-    emptyComponentText = 'Sorry, nothing found.'
+    emptyComponentText = 'Sorry, nothing found'
   }
 
   useEffect(() => {
