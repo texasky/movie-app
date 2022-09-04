@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component tests App component matches snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="movie-header"
+    data-testid="movie-header"
+  >
+    <div
+      className="movie-header-wrapper"
+    >
+      <div
+        className="movie-app-logo"
+        data-testid="movie-app-logo"
+      >
+        <img
+          alt="MOVIE APP"
+          height={40}
+          src="movie-app-icon.jpeg"
+          width={40}
+        />
+        <span>
+          MOVIE APP. TYPE AND SEARCH :)
+        </span>
+      </div>
+      <div
+        className="movie-search-bar"
+      >
+        <input
+          aria-label="search-input"
+          data-testid="movie-search-input"
+          id="movie-search-input"
+          onChange={[Function]}
+          placeholder="Type to search"
+          type="text"
+          value="Star Wars"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="movies-list movies-list-wrapper"
+    data-testid="movie-list"
+  />
+</div>
+`;

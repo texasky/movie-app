@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movi preview component matches snapshot 1`] = `
+<div
+  className="movie-preview"
+  data-testid="movie-preview"
+>
+  <div
+    className="back-button"
+    data-testid="back-button"
+    onClick={[Function]}
+  />
+  <div
+    className="movie-preview-card"
+  >
+    <img />
+    <div
+      className="movie-preview-info"
+    >
+      <span>
+        Title: 
+      </span>
+      <span>
+        Year: 
+      </span>
+      <span>
+        Type: 
+      </span>
+    </div>
+  </div>
+</div>
+`;

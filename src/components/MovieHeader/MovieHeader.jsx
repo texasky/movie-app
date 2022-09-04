@@ -3,7 +3,6 @@ import MovieSearchBar from '../MovieSearchBar/MovieSearchBar';
 import './MovieHeader.css';
 
 const MovieHeader = (props) => {
-
     return (
         <div className='movie-header' data-testid="movie-header">
             <div className='movie-header-wrapper'>

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Back button component matches snapshot 1`] = `
+<div
+  className="empty-component"
+  data-testid="empty-component"
+>
+  <span>
+    Some text to test
+  </span>
+</div>
+`;

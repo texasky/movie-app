@@ -2,7 +2,8 @@ import axios from "axios"
 
 export const fetchMovies = (query) => {
     return async (dispatch) => {
-        const response = await axios.get(`http://www.omdbapi.com/?s=${query}&apikey=c6ba1cfc`);
+        const url = `http://www.omdbapi.com/?s=${query}&apikey=c6ba1cfc`;
+        const response = await axios.get(url);
         const dataSearch = await response.data.Search;
         
         dispatch({

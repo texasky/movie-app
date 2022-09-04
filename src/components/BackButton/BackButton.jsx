@@ -10,7 +10,7 @@ const BackButton = (props) => {
     }
 
     return (
-        <div className='back-button' onClick={getBackButtonHadler}></div>
+        <div className='back-button' data-testid="back-button" onClick={getBackButtonHadler}></div>
     )
 }
 

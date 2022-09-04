@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movi app logo component matches snapshot 1`] = `
+<div
+  className="movie-app-logo"
+  data-testid="movie-app-logo"
+>
+  <img
+    alt="MOVIE APP"
+    height={40}
+    src="movie-app-icon.jpeg"
+    width={40}
+  />
+  <span>
+    MOVIE APP. TYPE AND SEARCH :)
+  </span>
+</div>
+`;

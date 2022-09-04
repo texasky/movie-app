@@ -12,7 +12,15 @@ const MovieSearchBar = (props) => {
 
     return (
         <div className='movie-search-bar'>
-            <input type="text" placeholder='Type to search' value={searchQuery} onChange={(event => setSearchQuery(event))}></input>
+            <input 
+                id="movie-search-input"
+                type="text" 
+                placeholder='Type to search' 
+                aria-label='search-input' 
+                data-testid="movie-search-input"
+                value={searchQuery} 
+                onChange={(event => setSearchQuery(event))}
+            />
         </div>
     )
 }

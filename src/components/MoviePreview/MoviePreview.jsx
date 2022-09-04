@@ -11,11 +11,11 @@ const MoviePreview = (props) => {
         <div className='movie-preview' data-testid="movie-preview">
             <BackButton/>
             <div className='movie-preview-card'>
-                <img src={openedMovieData.Poster} alt={openedMovieData.Title}/>
+                <img src={openedMovieData?.Poster} alt={openedMovieData?.Title}/>
                 <div className='movie-preview-info'>
-                    <span>Title: {openedMovieData.Title}</span>
-                    <span>Year: {openedMovieData.Year}</span>
-                    <span>Type: {openedMovieData.Type}</span>
+                    <span>Title: {openedMovieData?.Title}</span>
+                    <span>Year: {openedMovieData?.Year}</span>
+                    <span>Type: {openedMovieData?.Type}</span>
                 </div>
             </div>
         </div>

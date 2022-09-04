@@ -16,7 +16,7 @@ const simpleMovieObject = {
     totalResults: "1"
 }
   
-describe('movies reducer', () => {
+describe('Movies reducer tests', () => {
     it('returns the initial state', () => {
         expect(reducer(undefined, {})).toEqual(initialState);
     });
@@ -29,7 +29,6 @@ describe('movies reducer', () => {
     });
 
     it('update search query', () => {
-        console.log(initialState)
         expect(reducer(initialState, { type: "UPDATE_SEARCH_QUERY", payload: 'harry' })).toEqual({
             ...initialState,
             searchQuery: 'harry'

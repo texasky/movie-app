@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import App from './App';
 import { Provider } from 'react-redux';
 import store from './state/store'
@@ -97,7 +98,7 @@ describe('App component tests', () => {
     })
   })
 
-  describe('Is MoviePreview component renders', () => {
+  test('Render MoviePreview component', () => {
     const store = mockStore({
       moviesStore: {
         movies: [{
@@ -112,33 +113,18 @@ describe('App component tests', () => {
         openedMovieId: 'tt1201607',
       }
     })
+  
+    render(<Provider store={store}><App/></Provider>);
 
-    test('Render MoviePreview component', () => {
-      render(<Provider store={store}><App/></Provider>);
+    const movieListElement = screen.queryByTestId('movie-list');
+    const linkElement = screen.getByTestId('movie-preview')
 
-      const movieListElement = screen.queryByTestId('movie-list');
-      const linkElement = screen.getByTestId('movie-preview')
+    expect(movieListElement).not.toBeInTheDocument();
+    expect(linkElement).toBeInTheDocument();
+  });
 
-      expect(movieListElement).not.toBeInTheDocument();
-      expect(linkElement).toBeInTheDocument();
-    });
-
-    // test("If ParentComponent is passed open and has data, ChildComponent is called with prop open and data", () => {
-    //   // Render the ParentComponent with the props wanting to
-    //   // be tested.
-    //   // render(<ParentComponent open data="some data" />);
-    //   render(<Provider store={store}><App/></Provider>);
-    
-    //   // Check that the Jest mock function is called with an object.
-    //   // Use 'expect.objectContaining' to make sure any other default
-    //   // React props are ignored.
-    //   expect(mockChildComponent).toHaveBeenCalledWith(
-    //     expect.objectContaining({
-    //       open: true,
-    //       data: "some data",
-    //     })
-    //   );
-    // });
-  })
-
+  test('App component matches snapshot', () => {
+    const tree = renderer.create(<Provider store={store}><App/></Provider>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

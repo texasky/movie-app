@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movies list component matches snapshot 1`] = `
+<div
+  className="movies-list movies-list-wrapper"
+  data-testid="movie-list"
+>
+  <div
+    className="movie-item"
+    data-testid="movie-item"
+    onClick={[Function]}
+  >
+    <img
+      alt="movie"
+      src="https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+    />
+    <div
+      className="movie-item-title"
+    >
+      Harry Potter and the Deathly Hallows: Part 2
+    </div>
+  </div>
+  <div
+    className="movie-item"
+    data-testid="movie-item"
+    onClick={[Function]}
+  >
+    <img
+      alt="movie"
+      src="https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+    />
+    <div
+      className="movie-item-title"
+    >
+      Harry Potter and the Deathly Hallows: Part 3
+    </div>
+  </div>
+</div>
+`;
