@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import MoviesList from './components/MoviesList/MoviesList';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies } from './state/action-creator/index'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MovieHeader from './components/MovieHeader/MovieHeader';
 import MoviePreview from './components/MoviePreview/MoviePreview';
 import EmptyComponent from './components/EmptyComponent/EmptyComponent';
@@ -26,16 +27,26 @@ const App = () => {
   }
 
   useEffect(() => {
-    dispatch(fetchMovies(searchQuery));
-  }, [dispatch, searchQuery])
+    dispatch(fetchMovies('star wars'));
+  }, [dispatch])
+
+  useEffect(() => {
+    if(searchQuery && !isMovieOpened) dispatch(fetchMovies(searchQuery));
+  }, [dispatch, searchQuery, isMovieOpened])
 
   return (
-    <div className="App">
-      <MovieHeader/>
-      {emptyComponentText && <EmptyComponent text={emptyComponentText}/>}
-      {isMovieOpened && <MoviePreview/>}
-      {(movies && !isMovieOpened) && <MoviesList movies={movies}/>}
-    </div>
+    <Router>
+      <div className="App">
+        <MovieHeader/>
+        {emptyComponentText && !isMovieOpened && <EmptyComponent text={emptyComponentText}/>}
+        <Routes>
+          {movies && !isMovieOpened && <Route path='/' element={<MoviesList movies={movies}/>}/>}
+          <Route path='/moviepreview/:id' element={<MoviePreview/>}/>
+        </Routes>
+        {/* {isMovieOpened && <MoviePreview/>} */}
+        {/* {(movies && !isMovieOpened) && <MoviesList movies={movies}/>} */}
+      </div>
+    </Router>
   );
 }
 

@@ -1,16 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Movie item component matches snapshot 1`] = `
-<div
-  className="movie-item"
-  data-testid="movie-item"
+<a
+  href="/moviepreview/undefined"
   onClick={[Function]}
 >
-  <img
-    alt="movie"
-  />
   <div
-    className="movie-item-title"
-  />
-</div>
+    className="movie-item"
+    data-testid="movie-item"
+    onClick={[Function]}
+  >
+    <img
+      alt="movie"
+    />
+    <div
+      className="movie-item-title"
+    />
+  </div>
+</a>
 `;

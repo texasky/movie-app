@@ -3,10 +3,11 @@ import renderer from 'react-test-renderer';
 import BackButton from './BackButton';
 import { Provider } from 'react-redux';
 import store from './../../state/store'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 test('Back button component tests', () => {
     const clickFn = jest.fn();
-    const utils = render(<Provider store={store}><BackButton onClick={clickFn()}/></Provider>);
+    const utils = render(<Provider store={store}><Router><BackButton onClick={clickFn()}/></Router></Provider>);
 
     const movieComponent = utils.getByTestId('back-button');
     fireEvent.click(movieComponent)
@@ -16,6 +17,6 @@ test('Back button component tests', () => {
 
 test('Back button component matches snapshot', () => {
     const clickFn = jest.fn();
-    const tree = renderer.create(<Provider store={store}><BackButton onClick={clickFn()}/></Provider>).toJSON();
+    const tree = renderer.create(<Provider store={store}><Router><BackButton onClick={clickFn()}/></Router></Provider>).toJSON();
     expect(tree).toMatchSnapshot();
 });

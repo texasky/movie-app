@@ -2,9 +2,10 @@ import reducer from './moviesReducer';
 
 const initialState = {
     movies: [],
-    searchQuery: 'Star Wars',
+    searchQuery: '',
     isMovieOpened: false,
     openedMovieId: '',
+    openedMovieData: {}
   };
 
 const simpleMovieObject = {
@@ -35,8 +36,15 @@ describe('Movies reducer tests', () => {
         });
     });
 
-    it('toggle isMovieOpened', () => {
-        expect(reducer(initialState, { type: "TOGGLE_MOVIE_OPEN" })).toEqual({
+    it('set movie open state to false', () => {
+        expect(reducer(initialState, { type: "SET_MOVIE_OPEN_TO_FALSE", payload: false })).toEqual({
+            ...initialState,
+            isMovieOpened: false,
+        });
+    });
+
+    it('set movie open state to true', () => {
+        expect(reducer(initialState, { type: "SET_MOVIE_OPEN_TO_TRUE", payload: true })).toEqual({
             ...initialState,
             isMovieOpened: true,
         });
@@ -46,6 +54,13 @@ describe('Movies reducer tests', () => {
         expect(reducer(initialState, { type: "SET_OPEN_MOVIE_ID", payload: "tt5639360" })).toEqual({
             ...initialState,
             openedMovieId: "tt5639360",
+        });
+    });
+
+    it('update openMovieId', () => {
+        expect(reducer(initialState, { type: "FETCH_MOVIE_DATA", payload: simpleMovieObject })).toEqual({
+            ...initialState,
+            openedMovieData: simpleMovieObject,
         });
     });
 });

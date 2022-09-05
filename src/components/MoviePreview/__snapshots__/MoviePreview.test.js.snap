@@ -5,11 +5,16 @@ exports[`Movi preview component matches snapshot 1`] = `
   className="movie-preview"
   data-testid="movie-preview"
 >
-  <div
-    className="back-button"
-    data-testid="back-button"
+  <a
+    href="/"
     onClick={[Function]}
-  />
+  >
+    <div
+      className="back-button"
+      data-testid="back-button"
+      onClick={[Function]}
+    />
+  </a>
   <div
     className="movie-preview-card"
   >
@@ -24,7 +29,7 @@ exports[`Movi preview component matches snapshot 1`] = `
         Year: 
       </span>
       <span>
-        Type: 
+        Plot: 
       </span>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { openMovie } from '../../state/action-creator/index'
+import { openMovie } from '../../state/action-creator/index';
+import { Link } from "react-router-dom";
 import './MovieItem.css'
 
 const MovieItem = (props) => {
@@ -10,10 +11,12 @@ const MovieItem = (props) => {
     }
 
     return (
-        <div className='movie-item' data-testid="movie-item" onClick={openMovieHandler}>
-            <img src={props.movie?.Poster} alt="movie"></img>
-            <div className='movie-item-title'>{props.movie?.Title}</div>
-        </div>
+        <Link to={`/moviepreview/${props.movie?.imdbID}`}>
+            <div className='movie-item' data-testid="movie-item" onClick={openMovieHandler}>
+                <img src={props.movie?.Poster} alt="movie"></img>
+                <div className='movie-item-title'>{props.movie?.Title}</div>
+            </div>
+        </Link>
     )
 }
 

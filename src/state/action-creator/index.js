@@ -19,11 +19,28 @@ export const updateSearchQuery = (query) => {
 
 export const openMovie = (movieId) => {
     return (dispatch) => {
-        dispatch({type: 'TOGGLE_MOVIE_OPEN'})
+        dispatch({type: 'SET_MOVIE_OPEN_TO_TRUE', payload: true})
         dispatch({type: 'SET_OPEN_MOVIE_ID', payload: movieId})
     }
 }
 
-export const toggleOpenMovie = () => {
-    return (dispatch) => dispatch({type: 'TOGGLE_MOVIE_OPEN'})
+export const setMovieOpenToFalse = () => {
+    return (dispatch) => dispatch({type: 'SET_MOVIE_OPEN_TO_FALSE', payload: false})
 }
+
+export const setMovieOpenToTrue = () => {
+    return (dispatch) => dispatch({type: 'SET_MOVIE_OPEN_TO_TRUE', payload: true})
+}
+
+export const fetchOpenedMovieData = (movieId) => {
+    return async (dispatch) => {
+        const url = `http://www.omdbapi.com/?i=${movieId}&apikey=c6ba1cfc`;
+        const response = await axios.get(url);
+        const movieData = await response.data;
+        
+        dispatch({
+            type: 'FETCH_MOVIE_DATA',
+            payload: movieData
+        })
+    };
+};

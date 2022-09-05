@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { updateSearchQuery } from '../../state/action-creator/index'
+import { updateSearchQuery, setMovieOpenToFalse } from '../../state/action-creator/index'
 import './MovieSearchBar.css'
 
 const MovieSearchBar = (props) => {
@@ -8,6 +8,7 @@ const MovieSearchBar = (props) => {
 
     const setSearchQuery = (event) => {
         dispatch(updateSearchQuery(event.target.value));
+        dispatch(setMovieOpenToFalse());
     }
 
     return (
