@@ -29,8 +29,6 @@ describe('App component tests', () => {
 
       render(<Provider store={store}><App/></Provider>);
       const linkElement = screen.queryByTestId('empty-component');
-      const movieListElement = screen.queryByTestId('movie-list');
-      expect(movieListElement).not.toBeInTheDocument();
       expect(linkElement).toBeInTheDocument();
       expect(linkElement).toHaveTextContent('Type to search a movie');
     })
@@ -46,9 +44,6 @@ describe('App component tests', () => {
 
       render(<Provider store={store}><App/></Provider>);
       const linkElement = screen.queryByTestId('empty-component');
-      const movieListElement = screen.queryByTestId('movie-list');
-
-      expect(movieListElement).not.toBeInTheDocument();
       expect(linkElement).toBeInTheDocument();
       expect(linkElement).toHaveTextContent('Sorry, nothing found');
     })
@@ -65,9 +60,6 @@ describe('App component tests', () => {
       render(<Provider store={store}><App/></Provider>);
 
       const linkElement = screen.queryByTestId('empty-component');
-      const movieListElement = screen.queryByTestId('movie-list');
-
-      expect(movieListElement).not.toBeInTheDocument();
       expect(linkElement).toBeInTheDocument();
       expect(linkElement).toHaveTextContent('Enter at least 3 letters to search');
     })
@@ -98,8 +90,8 @@ describe('App component tests', () => {
     })
   })
 
-  // test('App component matches snapshot', () => {
-  //   const tree = renderer.create(<Provider store={store}><App/></Provider>).toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  test('App component matches snapshot', () => {
+    const tree = renderer.create(<Provider store={store}><App/></Provider>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

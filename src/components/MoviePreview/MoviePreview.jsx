@@ -1,5 +1,5 @@
 import BackButton from '../BackButton/BackButton';
-import { fetchOpenedMovieData } from '../../state/action-creator';
+import { fetchOpenedMovieData, setMovieOpenToTrue } from '../../state/action-creator';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {useParams} from 'react-router-dom';
@@ -14,8 +14,9 @@ const MoviePreview = (props) => {
     const isTheSameMovieInStore = params.id === openedMovieData.imdbID;
 
     useEffect(() => {
-        dispatch(fetchOpenedMovieData(params.id))
-    }, [dispatch, params])
+        dispatch(setMovieOpenToTrue())
+        if(!isTheSameMovieInStore) dispatch(fetchOpenedMovieData(params.id))
+    }, [dispatch, params, isTheSameMovieInStore])
 
     return (
         <div className='movie-preview' data-testid="movie-preview">

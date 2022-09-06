@@ -5,6 +5,7 @@ import './MovieSearchBar.css'
 const MovieSearchBar = (props) => {
     const dispatch = useDispatch();
     const searchQuery = useSelector(state => state.moviesStore.searchQuery);
+    const isMovieOpened = useSelector(state => state.moviesStore.isMovieOpened);
 
     const setSearchQuery = (event) => {
         dispatch(updateSearchQuery(event.target.value));
@@ -19,6 +20,7 @@ const MovieSearchBar = (props) => {
                 placeholder='Type to search' 
                 aria-label='search-input' 
                 data-testid="movie-search-input"
+                disabled={isMovieOpened}
                 value={searchQuery} 
                 onChange={(event => setSearchQuery(event))}
             />

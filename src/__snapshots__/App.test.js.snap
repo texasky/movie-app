@@ -31,11 +31,12 @@ exports[`App component tests App component matches snapshot 1`] = `
         <input
           aria-label="search-input"
           data-testid="movie-search-input"
+          disabled={false}
           id="movie-search-input"
           onChange={[Function]}
           placeholder="Type to search"
           type="text"
-          value="Star Wars"
+          value=""
         />
       </div>
     </div>

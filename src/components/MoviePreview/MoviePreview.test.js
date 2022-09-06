@@ -8,9 +8,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 test('Movi preview component tests', () => {
     const utils = render(<Provider store={store}><Router><MoviePreview /></Router></Provider>);
 
-    const movieHeader = utils.getByTestId('movie-preview');
+    const moviePreview = utils.getByTestId('movie-preview');
 
-    expect(movieHeader).toBeInTheDocument();
+    expect(moviePreview).toBeInTheDocument();
 });
 
 test('Movi preview component matches snapshot', () => {

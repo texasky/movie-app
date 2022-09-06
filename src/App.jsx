@@ -40,11 +40,9 @@ const App = () => {
         <MovieHeader/>
         {emptyComponentText && !isMovieOpened && <EmptyComponent text={emptyComponentText}/>}
         <Routes>
-          {movies && !isMovieOpened && <Route path='/' element={<MoviesList movies={movies}/>}/>}
+          <Route path='/' element={<MoviesList movies={movies}/>}/>
           <Route path='/moviepreview/:id' element={<MoviePreview/>}/>
         </Routes>
-        {/* {isMovieOpened && <MoviePreview/>} */}
-        {/* {(movies && !isMovieOpened) && <MoviesList movies={movies}/>} */}
       </div>
     </Router>
   );
